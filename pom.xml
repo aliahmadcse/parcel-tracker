@@ -9,10 +9,10 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>codes.aliahmad</groupId>
-  <artifactId>parcel-delivery</artifactId>
+  <artifactId>parcel-tracker</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>parcel-delivery</name>
-  <description>parcel-delivery</description>
+  <name>parcel-tracker</name>
+  <description>parcel-tracker</description>
   <url/>
   <licenses>
     <license/>

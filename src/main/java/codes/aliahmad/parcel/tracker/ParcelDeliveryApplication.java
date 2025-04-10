@@ -1,4 +1,4 @@
-package codes.aliahmad.parcel.delivery;
+package codes.aliahmad.parcel.tracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

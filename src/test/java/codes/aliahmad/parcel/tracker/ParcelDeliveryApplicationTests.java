@@ -1,4 +1,4 @@
-package codes.aliahmad.parcel.delivery;
+package codes.aliahmad.parcel.tracker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
