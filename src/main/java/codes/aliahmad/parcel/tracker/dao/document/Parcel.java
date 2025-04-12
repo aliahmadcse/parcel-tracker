@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
+import java.util.Map;
 import java.util.UUID;
 
 @Document(collection = "parcel")
@@ -19,9 +20,10 @@ public class Parcel
   private ObjectId id;
 
   private UUID referenceCode;
-  private Client sender;
-  private Client receiver;
+  private String senderEmail;
+  private String receiverEmail;
   private String deliveryAddress;
   private ParcelStatus status;
+  private Map<ParcelStatus, Instant> statusLog;
   private Instant createdAt;
 }

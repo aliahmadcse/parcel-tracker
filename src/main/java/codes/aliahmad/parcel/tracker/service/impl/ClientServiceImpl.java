@@ -6,6 +6,7 @@ import codes.aliahmad.parcel.tracker.dto.request.ClientListRequest;
 import codes.aliahmad.parcel.tracker.dto.request.ClientRequest;
 import codes.aliahmad.parcel.tracker.dto.response.ClientListResponse;
 import codes.aliahmad.parcel.tracker.dto.response.ClientResponse;
+import codes.aliahmad.parcel.tracker.exception.BadInputException;
 import codes.aliahmad.parcel.tracker.exception.ErrorCode;
 import codes.aliahmad.parcel.tracker.exception.ErrorMessage;
 import codes.aliahmad.parcel.tracker.exception.RecordNotFoundException;
@@ -31,6 +32,9 @@ public class ClientServiceImpl extends PagingBase implements ClientService
   @Override
   public ClientResponse createClient(ClientRequest clientRequest)
   {
+    if (clientRepository.findByEmail(clientRequest.email()).isPresent()) {
+      throw new BadInputException(ErrorCode.BAD_INPUT_PARAMETER, ErrorMessage.EMAIL_ALREADY_EXIST);
+    }
     Client client = ClientMapper.toClient(clientRequest);
 
     Client savedClient = clientRepository.save(client);
