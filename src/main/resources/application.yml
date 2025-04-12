@@ -6,7 +6,7 @@ spring:
       enabled: true
   data:
     mongodb:
-      uri: mongodb://${MONGO_DB_USER:root}:${MONGO_PASSWORD:root}@${MONGO_DB_HOST:localhost}:${MONGO_DB_PORT:27017}/parcel_db?authSource=admin
+      uri: mongodb://${MONGO_DB_USER:root}:${MONGO_DB_PASSWORD:root}@${MONGO_DB_HOST:localhost}:${MONGO_DB_PORT:27017}/parcel_db?authSource=admin
 
 springdoc:
   swagger-ui:
