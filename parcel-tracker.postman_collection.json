@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "164a28b1-7af6-4761-8649-d88281bedbc3",
+		"name": "parcel-tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15084485"
+	},
+	"item": [
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "Create Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Ali\",\n    \"lastName\": \"Ahmad\",\n    \"email\": \"ali.ahmad@gmail.com\",\n    \"phone\": \"+92123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/client",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/client/ali.ahmad@gmail.com",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"client",
+								"ali.ahmad@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/client?pageNo=2&recordPerPage=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"client"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "2"
+								},
+								{
+									"key": "recordPerPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "parcel",
+			"item": [
+				{
+					"name": "Create Parcel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"senderEmail\": \"ali.ahmad@gmail.com\",\n    \"receiverEmail\": \"ali.ahmad@gmail.com\",\n    \"deliveryAddress\": \"Anywhere\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/parcel",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"parcel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Parcel Status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"parcelId\": \"dancja\",\n    \"status\": \"cakjn\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/parcel",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"parcel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Parcel",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8080/api/v1",
+			"type": "string"
+		}
+	]
+}
