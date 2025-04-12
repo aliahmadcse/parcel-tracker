@@ -47,7 +47,7 @@ public class ClientControllerTest extends BaseIntegrationTest
   @Test
   public void testCreateClient() throws Exception
   {
-    ClientRequest clientRequest = new ClientRequest("Alice", "Johnson", "alice.johnson@example.com", "1-202-555-0143");
+    ClientRequest clientRequest = new ClientRequest("Alice", "Johnson", "alice.johnson1@example.com", "1-202-555-0143");
     mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/client")
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(objectMapper.writeValueAsString(clientRequest)))
@@ -55,7 +55,7 @@ public class ClientControllerTest extends BaseIntegrationTest
             .andExpect(status().isCreated())
             .andExpect(jsonPath("$.firstName").value("Alice"))
             .andExpect(jsonPath("$.lastName").value("Johnson"))
-            .andExpect(jsonPath("$.email").value("alice.johnson@example.com"))
+            .andExpect(jsonPath("$.email").value("alice.johnson1@example.com"))
             .andExpect(jsonPath("$.phone").value("1-202-555-0143"));
   }
 
