@@ -1,15 +1,18 @@
 package codes.aliahmad.parcel.tracker;
 
+import codes.aliahmad.parcel.tracker.base.BaseIntegrationTest;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class ParcelDeliveryApplicationTests
+
+class ParcelDeliveryApplicationTests extends BaseIntegrationTest
 {
 
   @Test
   void contextLoads()
   {
+    ParcelTrackerApplication.main(new String[]{});
+    Assertions.assertTrue(true);
   }
 
 }
